@@ -1,0 +1,10 @@
+main {
+    padding-top: 20px; 
+    padding-bottom: 10px;
+    height: 700px;
+    padding-left:50px; 
+}
+
+body {
+    overflow-y:scroll;
+}

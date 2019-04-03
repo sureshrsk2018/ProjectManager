@@ -1,0 +1,26 @@
+hr.style3 {
+	border-top: 1px dashed #8c8b8b;
+}
+
+.my-header{
+  margin: 5px 5px;  
+}
+.my-background {
+  background: #f99;
+  overflow-wrap:break-word;
+  }
+
+#pad{
+    padding-top:10px;
+    padding-bottom:20px;
+}
+
+body {
+    overflow-y:scroll;
+}
+
+.modal-open {overflow-y: auto}
+
+.modal-open .topnavbar-wrapper {
+    padding-right:17px; /* Noticed that right aligned navbar content got overlapped by the .modal scrollbar */
+}

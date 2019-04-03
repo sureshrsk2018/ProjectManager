@@ -1,0 +1,19 @@
+.my-navbar {
+ 
+  background-color: #004080;
+ 
+  border-color: #425766;
+ 
+}
+
+.my-navbar .navbar-brand {
+ 
+  color: #fff;
+ 
+}
+
+.my-navbar .navbar-brand:hover, .my-navbar .navbar-brand:focus {
+ 
+  color: #AAD5FF;
+ 
+}

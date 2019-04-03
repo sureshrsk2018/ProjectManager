@@ -1,0 +1,80 @@
+{
+    "COMMON":{
+        "SEARCH":"Search...",
+        "ADD":"Add",
+        "RESET":"Reset",
+        "SORT":"Sort By:",
+        "EDIT":"Edit",
+        "DELETE":"Delete",
+         "UPDATE":"Update",
+        "SUSPEND":"Suspend",
+        "SEARCH1":"Search",
+        "CANCEL":"Cancel"
+    },
+    "HEADER": {
+        "ADDPROJECT": "Add Project",
+        "ADDUSER": "Add User",
+        "ADDTASK": "Add Task",
+        "VIEWTASK": "View Task"
+    },
+    "USER":{
+        "FIRSTNAME":"First Name:",
+        "LASTNAME":"Last Name:",
+        "EMPID":"Employee Id:"
+
+    },
+    "PROJECT":{
+        "PROJECT":"Project:",
+        "DATECONT":"Set Start and End Date",
+        "STARTDATE":"Start Date",
+        "ENDDATE":"End Date",
+        "PRIORITY":"Priority:",
+        "MANAGER":"Manager",
+        "NOOFTASK":"No Of Tasks:",
+        "COMPLETE":"Completed",
+        "PRIORITY1":"Priority"
+    },
+    "TASK":{
+        "PROJECT":"Project:",
+        "TASK":"Task:",
+        "PARENT":"Parent Task",
+        "STARTDATE":"Start Date:",
+        "ENDDATE":"End Date:",
+        "PRIORITY":"Priority:",
+        "USER":"User:",
+        "ADDTASK":"Add Task"
+     },
+     "VIEWTASK":{
+        "SORT":"Sort Task By:",
+        "STARTDATE":"Start Date",
+        "ENDDATE":"End Date",
+        "PRIORITY1":"Priority",
+        "COMPLETE":"Completed",
+        "TASK":"Task",
+        "PARENT":"Parent",
+        "PRIORITY":"Priority",
+        "START":"Start",
+        "END":"End",
+        "ENDTASK":"End Task",
+        "NOPARENT": "There is no parent for this task"
+     },
+     "MESSAGES":{
+         "ADDUSER":"User Added Successfully",
+         "MODUSER":"User Modified Successfully",
+         "DELUSER":"User Deleted Successfully",
+         "ERRORHEADER":"Correct the below Errors",
+         "FORMFIELD":"Form Field",
+         "ERROR":"Error",
+         "EMPTY":"No Record Found",
+         "MANAGERERR":"Manager field is required",
+         "ADDPROJECT":"Project Added Successfully",
+         "SUSPENDPROJECT":"Project Suspended Successfully",
+         "MODPROJECT":"Project Modified Successfully",
+         "DELPROJECT":"Project Deleted Successfully",
+         "ADDTASK":"Task Added Successfully",
+         "MODTASK":"Task Modified Successfully",
+         "DELTASK":"Task Deleted Successfully",
+         "TASKERR":"Confirm Project / Task Owner choosen",
+         "TASKCOMP":"Task Completed"
+     }
+}
