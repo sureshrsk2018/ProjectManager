@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+//import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.exception.ResourceNotFoundException;
 import com.project.entity.Project;
 import com.project.service.ProjectService;
@@ -31,6 +32,13 @@ public class ProjectRestController {
 	 @ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
 	public List<Project> addProject(@RequestBody Project project){
+		/*ObjectMapper obj=new ObjectMapper();
+		try {
+			String str = obj.writeValueAsString(project);
+			System.out.println("Tets parent project suresh"+str);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}*/
 		return projectService.addProject(project);
 	}
 	

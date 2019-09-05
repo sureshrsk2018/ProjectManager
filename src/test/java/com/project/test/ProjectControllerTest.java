@@ -238,5 +238,12 @@ public class ProjectControllerTest {
 		assertTrue("Project Sorting is not correct", lstSucccess);
 	}
 
+	/*public static void main (String args[]) throws Exception {
+		
+		new org.junit.runner.JUnitCore().run(ProjectControllerTest.class);		
+		ProjectControllerTest t =new ProjectControllerTest();
+		t.testAddProject(addedProject);
+	
+	}*/
 
 }

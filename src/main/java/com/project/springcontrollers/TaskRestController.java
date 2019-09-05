@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.entity.ParentTask;
 import com.project.entity.Task;
 import com.project.service.TaskService;
@@ -36,6 +37,13 @@ public class TaskRestController {
 	 @ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
 	public String addTask(@RequestBody Task task){
+		ObjectMapper obj=new ObjectMapper();
+		/*try {
+		String str = obj.writeValueAsString(task);
+		System.out.println("Tets suresh"+str);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}*/
 		taskService.addTask(task);
 		String responseMsg = messageSource.getMessage("ADDTASK_MESSAGE_SUCCESS", new Object[] {task.getTaskName()},Locale.US);
 		return responseMsg;
@@ -46,22 +54,37 @@ public class TaskRestController {
 	 @ResponseStatus(HttpStatus.CREATED)
 	@ResponseBody
 	public String addParentTask(@RequestBody ParentTask parentTask){
+		/*ObjectMapper obj=new ObjectMapper();
+		try {
+			String str = obj.writeValueAsString(parentTask);
+			System.out.println("Tets parent task suresh"+str);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}*/
 		taskService.addParentTask(parentTask);
 		String responseMsg = messageSource.getMessage("PARENT_TASK_MESSAGE_SUCCESS", new Object[] {parentTask.getParentTaskName()},Locale.US);
 		return responseMsg;
 	}
 	
-	/*@RequestMapping(value = "/deleteTask/{id}", method = RequestMethod.DELETE,produces = "application/json")
+	@RequestMapping(value = "/deleteTask/{id}", method = RequestMethod.DELETE,produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Task> deleteTask(@PathVariable("id") long taskId){
 		return taskService.deleteTask(taskId);
-	}*/
+	}
 	
 	@RequestMapping(value = "/editTask/{id}", method = RequestMethod.PUT,produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public String editTask(@PathVariable("id") long taskId,@RequestBody Task task) {
+		/*ObjectMapper obj=new ObjectMapper();
+		try {
+			String str = obj.writeValueAsString(task);
+			System.out.println("Tets edit task suresh"+str);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}*/
+		//System.out.println("Tets edit task suresh"+taskId);
 		taskService.editTask(taskId, task);
 		String responseMsg = messageSource.getMessage("EDITTASK_MESSAGE_SUCCESS", new Object[] {task.getTaskName()},Locale.US);
 		return responseMsg;
@@ -89,6 +112,7 @@ public class TaskRestController {
 	 @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Task> sortTasks(@PathVariable("sorttype") long sortType) {
+		System.out.println("Tets sort task - sort type suresh"+sortType);
 		return taskService.sortTasks(sortType);
 	}
 	
@@ -97,6 +121,9 @@ public class TaskRestController {
 	 @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
 	public List<Task> searchTask(@QueryParam("taskName") String taskName,@QueryParam("projectId") long projectId) {
+		
+		System.out.println("Tets search task - task name suresh"+taskName);
+		System.out.println("Tets search task - project id suresh"+projectId);
 		if(taskName!=null) {
 			return taskService.searchTaskByName(taskName);
 		}else {

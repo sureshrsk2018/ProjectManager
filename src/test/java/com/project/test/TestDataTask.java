@@ -39,16 +39,26 @@ public class TestDataTask {
 	}
 	
 	public static Object[] provideAddTasks() {
+		ParentTask pt=new ParentTask();
+		ParentTask pt1=new ParentTask();
+		pt.setParentTaskId(2);
+		pt.setParentTaskName("ParentTaskNmae1");
+		pt1.setParentTaskId(3);
+		pt1.setParentTaskName("ParentTaskNmae2");
 	   	Task task1 = new Task();
     	task1.setEndDate(new Date());
     	task1.setPriority(40);
     	task1.setTaskId(111);
+    	task1.setTaskName("Task1");
+    	task1.setParentTask(pt);
     	task1.setStartDate(new Date());
     	task1.setStatus("Completed");
     	Task task2 = new Task();
     	task2.setEndDate(new Date());
     	task2.setPriority(90);
     	task2.setTaskId(222);
+    	task2.setTaskName("taskname2");
+    	task2.setParentTask(pt1);
     	task2.setStartDate(new Date());
     	task2.setStatus("Inprogress");
 

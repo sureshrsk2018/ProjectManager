@@ -2,7 +2,9 @@
 package com.project.service.impl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,13 +31,13 @@ public class  TaskServiceImpl implements TaskService {
 	
 	@Override
 	public List<Task> addTask(Task task) {
-		/*ParentTask parentTask = task.getParentTask();
-		List<Task> taskLst = taskDao.findByParentTaskId(parentTask.getparentTaskId());
+		ParentTask parentTask = task.getParentTask();
+		List<Task> taskLst = taskDao.findByParentTaskId(parentTask.getParentTaskId());
 		Set<Task> taskSet = new HashSet<>();
 		taskSet.addAll(taskLst);
 		taskSet.add(task);
 		parentTask.setTaskSet(taskSet);
-		task.setParentTask(parentTask);*/
+		task.setParentTask(parentTask);
 		User user = task.getUser();
 		task.setUser(null);
 		if(task.getParentTask()==null || task.getParentTask().getParentTaskName()==null) {
@@ -51,11 +53,13 @@ public class  TaskServiceImpl implements TaskService {
 		parentTaskDao.save(parentTask);
 		return viewParentTasks();
 	}
-	/*@Override
+	@Override
 	public List<Task> deleteTask(long taskId) {
+		System.out.println("delete request task id "+taskId);
 		taskDao.delete(taskId);
+		System.out.println("success delete");
 		return viewTasks();
-	}*/
+	}
 
 	@Override
 	public List<Task> editTask(long taskId, Task task) {

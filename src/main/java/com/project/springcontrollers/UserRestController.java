@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+//import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.exception.ResourceNotFoundException;
 import com.project.entity.User;
 import com.project.service.UserService;
@@ -36,6 +38,14 @@ public class UserRestController {
 			method = RequestMethod.POST,produces = FSDContansts.APPLICATION_JSON)
 	 @ResponseStatus(HttpStatus.CREATED)
 	public @ResponseBody List<User> addUser(@RequestBody User user){
+		/*ObjectMapper obj=new ObjectMapper();
+		try {
+		String str = obj.writeValueAsString(user);
+		System.out.println("Tets suresh"+str);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}*/
+		System.out.println(user);
 		return userService.addUser(user);
 	}
 	
